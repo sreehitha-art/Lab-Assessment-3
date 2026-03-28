@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Dynamic Font Customizer</title> 
+    <style> 
+        body { font-family: sans-serif; padding: 20px; } 
+         
+        /* The target element to be styled */ 
+        #preview-text { 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            margin-top: 20px; 
+            text-align: center; 
+            transition: 0.2s; /* Smooth transitions */ 
+        } 
+ 
+        fieldset { 
+            width: 300px; 
+            border-radius: 8px; 
+            border: 2px solid #4A90E2; 
+        } 
+ 
+        .control-group { margin-bottom: 15px; } 
+        label { display: block; margin-bottom: 5px; font-weight: bold; } 
+    </style> 
+</head> 
+<body> 
+<h2>Font Customization Tool</h2> 
+ 
+    <fieldset> 
+        <legend>Controls</legend> 
+         
+        <div class="control-group"> 
+            <label for="fontSize">Font Size (px):</label> 
+            <input type="range" id="fontSize" min="10" max="100" value="20" oninput="updateStyle()"> 
+        </div> 
+ 
+        <div class="control-group"> 
+            <label for="textColor">Text Color:</label> 
+            <input type="color" id="textColor" value="#000000" oninput="updateStyle()"> 
+        </div> 
+ 
+        <div class="control-group"> 
+            <label for="bgColor">Background Color:</label> 
+            <input type="color" id="bgColor" value="#ffffff" oninput="updateStyle()"> 
+        </div> 
+    </fieldset> 
+ 
+    <div id="preview-text"> 
+        This is a live preview of your style changes! 
+    </div> 
+ 
+    <script> 
+        function updateStyle() { 
+            // Accessing elements 
+            const textElement = document.getElementById('preview-text'); 
+            const sizeInput = document.getElementById('fontSize').value; 
+            const colorInput = document.getElementById('textColor').value; 
+            const bgInput = document.getElementById('bgColor').value; 
+ 
+            // Directly modifying CSS style properties 
+            textElement.style.fontSize = sizeInput + "px"; 
+            textElement.style.color = colorInput; 
+            textElement.style.backgroundColor = bgInput; 
+        } 
+    </script> 
+ 
+</body> 
+</html> 
