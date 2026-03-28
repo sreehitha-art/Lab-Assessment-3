@@ -1,0 +1,24 @@
+<!-- Radio buttons --> 
+<input type="radio" name="color" value="Red">Red 
+<input type="radio" name="color" value="Green">Green 
+<input type="radio" name="color" value="Blue">Blue 
+ 
+<button onclick="showColor()">Show</button> 
+ 
+<p id="out"></p> 
+ 
+<script> 
+// Function to display selected value 
+function showColor() { 
+ 
+    let colors = document.getElementsByName("color"); 
+ 
+    // Loop through radio buttons 
+    for (let c of colors) { 
+        if (c.checked) { 
+            document.getElementById("out").innerHTML = c.value; 
+        } 
+    } 
+} 
+</script> 
+ 
