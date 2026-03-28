@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Skill Validation</title> 
+ 
+<script> 
+// Function to validate at least 3 skills 
+function validateSkills() { 
+ 
+    let skills = document.querySelectorAll("input[type=checkbox]"); 
+    let selected = []; 
+ 
+    // Loop through checkboxes 
+    for (let i = 0; i < skills.length; i++) { 
+        if (skills[i].checked) { 
+            selected.push(skills[i].value); 
+        } 
+    } 
+ 
+    // Validation 
+    if (selected.length < 3) { 
+        alert("Select at least 3 skills"); 
+    } else { 
+        document.getElementById("out").innerHTML = 
+            "Selected Skills: " + selected.join(", "); 
+    } 
+} 
+</script> 
+</head> 
+ 
+<body> 
+ 
+<h3>Select at least 3 skills:</h3> 
+ 
+<!-- Checkboxes --> 
+<input type="checkbox" value="HTML">HTML<br> 
+<input type="checkbox" value="CSS">CSS<br> 
+<input type="checkbox" value="JavaScript">JavaScript<br> 
+<input type="checkbox" value="Python">Python<br> 
+<input type="checkbox" value="Java">Java<br> 
+ 
+<br> 
+ 
+<!-- Button --> 
+<button onclick="validateSkills()">Submit</button> 
+ 
+<!-- Output --> 
+<p id="out"></p> 
+ 
+</body> 
+</html> 
