@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Text Styling Application</title> 
+    <style> 
+        /* Predefined CSS Classes */ 
+        .bold-text { font-weight: bold; } 
+        .italic-text { font-style: italic; } 
+        .small-caps-text { font-variant: small-caps; } 
+         
+        /* Layout Styling */ 
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; } 
+        fieldset { border: 2px solid #4a90e2; border-radius: 8px; padding: 20px; max-width: 500px; } 
+        legend { font-weight: bold; color: #4a90e2; padding: 0 10px; } 
+        #messageDisplay {  
+            margin-top: 20px;  
+            padding: 15px;  
+            border: 1px solid #ddd;  
+            min-height: 50px;  
+            font-size: 1.2rem; 
+            background-color: #f9f9f9; 
+        } 
+        .controls { margin-top: 15px; display: flex; gap: 10px; } 
+        button { padding: 8px 15px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; } 
+    </style> 
+</head> 
+<body> 
+ 
+    <fieldset> 
+        <legend>Text Styler</legend> 
+         
+        <p>Your Message:</p> 
+        <div id="messageDisplay">The quick brown fox jumps over the lazy dog.</div> 
+ 
+        <div class="controls"> 
+            <button onclick="applyStyle('bold-text')">Bold</button> 
+            <button onclick="applyStyle('italic-text')">Italic</button> 
+            <button onclick="applyStyle('small-caps-text')">Small-Caps</button> 
+            <button onclick="applyMultipleStyles()">Apply Multiple</button> 
+            <button onclick="resetStyles()">Reset</button> 
+        </div> 
+    </fieldset> 
+ 
+    <script> 
+        const textElement = document.getElementById('messageDisplay'); 
+ 
+        // Function using className property 
+        function applyStyle(newClass) { 
+            textElement.className = newClass; 
+        } 
+ 
+        // Concept: Multiple class assignment 
+        function applyMultipleStyles() { 
+            // Assigns multiple classes as a space-separated string 
+            textElement.className = "bold-text italic-text small-caps-text"; 
+        } 
+ 
+        function resetStyles() { 
+            textElement.className = ""; 
+        } 
+    </script> 
+</body> 
+</html> 
