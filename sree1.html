@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Hello World</title> 
+ 
+<script> 
+// Function to display message 
+function showMessage() { 
+    // Access element by ID and replace it 
+    document.getElementById("msg").outerHTML = "<h2>Hello, world!</h2>"; 
+} 
+</script> 
+ 
+</head> 
+<body> 
+ 
+<!-- Button to trigger function --> 
+<button onclick="showMessage()">Click Me</button> 
+ 
+<!-- Placeholder for message --> 
+<p id="msg"></p> 
+ 
+</body> 
+</html> 
+ 
