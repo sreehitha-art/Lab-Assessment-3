@@ -1,0 +1,24 @@
+<input type="number" id="n"> 
+<button onclick="printNumbers()">Print</button> 
+ 
+<p id="out"></p> 
+ 
+<script> 
+// Function to print numbers using while loop 
+function printNumbers() { 
+ 
+    let n = document.getElementById("n").value; 
+    let i = 1; 
+    let result = ""; 
+ 
+    // While loop 
+    while(i <= n) { 
+        result += i + " "; 
+        i++; 
+    } 
+ 
+    document.getElementById("out").innerHTML = result; 
+} 
+</script> 
+ 
+ 
