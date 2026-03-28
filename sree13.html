@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Product Order Form</title> 
+    <style> 
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; } 
+        fieldset { margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; } 
+        legend { font-weight: bold; padding: 0 10px; } 
+        .total-section { font-size: 1.2em; font-weight: bold; color: #2c3e50; } 
+        button { padding: 10px 20px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 4px; } 
+    </style> 
+</head> 
+<body> 
+ 
+    <h2>Product Order Form</h2> 
+ 
+    <form id="orderForm"> 
+        <fieldset> 
+            <legend>Electronics</legend> 
+            <input type="checkbox" class="product" data-price="599.99" value="Smartphone"> Smartphone - $599.99<br> 
+            <input type="checkbox" class="product" data-price="999.50" value="Laptop"> Laptop - $999.50<br> 
+        </fieldset> 
+ 
+        <fieldset> 
+<legend>Accessories</legend> 
+            <input type="checkbox" class="product" data-price="25.00" value="Phone Case"> Phone Case - $25.00<br> 
+            <input type="checkbox" class="product" data-price="45.75" value="Charger"> USB-C Charger - $45.75<br> 
+        </fieldset> 
+ 
+        <button type="button" onclick="calculateTotal()">Calculate Total</button> 
+    </form> 
+ 
+    <div class="total-section"> 
+        <p>Total Price: $<span id="displayTotal">0.00</span></p> 
+    </div> 
+ 
+    <script> 
+        function calculateTotal() { 
+            // Get all checkboxes with the class 'product' 
+            const products = document.querySelectorAll('.product'); 
+            let total = 0; 
+ 
+            // Using the modern for...of loop as requested 
+            for (const item of products) { 
+                if (item.checked) { 
+                    // Using parseFloat() to convert the data-price string to a number 
+                    total += parseFloat(item.getAttribute('data-price')); 
+                } 
+            } 
+ 
+            // Update the display with 2 decimal places 
+            document.getElementById('displayTotal').innerText = total.toFixed(2); 
+        } 
+    </script> 
+ 
+</body> 
+</html> 
+ 
+ 
