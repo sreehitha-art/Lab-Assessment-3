@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+  
+<form> 
+Name: <input type="text" id="name"><br> 
+Age: <input type="number" id="age"><br> 
+  
+<button type="button" onclick="addStudent()">Add Student</button> 
+</form> 
+  
+<p id="output"></p> 
+  
+<script> 
+// Array to store student objects 
+let students = []; 
+  
+// Function to add student 
+function addStudent() { 
+  
+    // Get values 
+    let name = document.getElementById("name").value; 
+    let age = document.getElementById("age").value; 
+   // Create object and push into array 
+    students.push({name: name, age: age}); 
+  
+    // Display updated list 
+    displayStudents(); 
+} 
+  
+// Function to display students 
+function displayStudents() { 
+    let result = ""; 
+  
+    // Loop through array 
+    for (let s of students) { 
+        result += s.name + " - " + s.age + "<br>"; 
+    } 
+  
+    document.getElementById("output").innerHTML = result; 
+} 
+</script> 
+  
+</body> 
+</html> 
+ 
