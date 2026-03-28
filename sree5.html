@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<script> 
+// Function to perform calculations 
+function calculate(op) { 
+ 
+    // Convert input values to float 
+    let a = parseFloat(document.getElementById("num1").value); 
+    let b = parseFloat(document.getElementById("num2").value); 
+ 
+    let result; 
+ 
+    // Switch case for operations 
+    switch(op) { 
+        case '+': result = a + b; break; 
+        case '-': result = a - b; break; 
+        case '*': result = a * b; break; 
+ 
+        case '/': 
+            // Handle division by zero 
+            if (b != 0) 
+                result = a / b; 
+            else 
+                result = "Cannot divide by zero"; 
+            break; 
+    } 
+ 
+    // Display result 
+    document.getElementById("res").innerHTML = result; 
+} 
+</script> 
+</head> 
+ 
+<body> 
+ 
+<!-- Number inputs --> 
+<input type="number" id="num1" step="any"> 
+<input type="number" id="num2" step="any"><br> 
+ 
+<!-- Operation buttons --> 
+<button onclick="calculate('+')">+</button> 
+<button onclick="calculate('-')">-</button> 
+<button onclick="calculate('*')">*</button> 
+<button onclick="calculate('/')">/</button> 
+ 
+<p id="res"></p> 
+ 
+</body> 
+</html> 
+ 
